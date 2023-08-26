@@ -13,6 +13,7 @@
 //   });
 //   cy.reload();
 // });
+
 Cypress.Commands.add("getLoggedInSession", () => {
   return cy.task("getLoggedInSession").then((cookies) => {
     cy.log("Setting cookies from Playwright session", cookies);
