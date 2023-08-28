@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+// these commented lines of code are similar to the "Jordan" solution, but I had to make changes.
 
 // it("Log into using Playwright and apply to Cypress", () => {
 // cy.visit("http://dev.cms.test/");
@@ -25,7 +26,6 @@ Cypress.Commands.add("getLoggedInSession", () => {
   });
   // cy.reload();
 });
-
 it("The test can be simplified with a Cypress.command", () => {
   // cy.visit("http://dev.cms.test/");
   // cy.get(".login-btn").contains("ورود با نام کاربری").click();
