@@ -32,6 +32,7 @@ it("The test can be simplified with a Cypress.command", () => {
 
   //   "Creating Playwright session and pulling cookies to apply to Cypress."
   cy.getLoggedInSession();
-
-  // cy.reload();
+  cy.wait(2000);
+  cy.visit("http://dev.cms.test/");
+  cy.contains("مدیریت کاربران").click();
 });
