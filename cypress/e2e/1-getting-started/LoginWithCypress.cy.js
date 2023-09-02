@@ -1,19 +1,4 @@
 /// <reference types="cypress" />
-// these commented lines of code are similar to the "Jordan" solution, but I had to make changes.
-
-// it("Log into using Playwright and apply to Cypress", () => {
-// cy.visit("http://dev.cms.test/");
-// cy.get(".login-btn").contains("ورود با نام کاربری").click();
-
-//   cy.log("Creating BBC session and pulling cookies to apply to Cypress.");
-//   cy.task("getLoggedInSession", null, { log: false }).then((cookies) => {
-//     cy.log("Setting cookies from Playwright session");
-//     for (const cookie of cookies) {
-//       cy.setCookie(cookie.name, cookie.value, { log: false });
-//     }
-//   });
-//   cy.reload();
-// });
 
 Cypress.Commands.add("getLoggedInSession", () => {
   return cy.task("getLoggedInSession").then((cookies) => {
