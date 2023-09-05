@@ -13,7 +13,7 @@ Cypress.Commands.add("getLoggedInSession", () => {
 });
 it("The test can be simplified with a Cypress.command", () => {
   cy.visit("http://dev.cms.test/");
-  cy.get(".login-btn").contains("ورود با نام کاربری").click();
+  // cy.get(".login-btn").contains("ورود با نام کاربری").click();
 
   //   "Creating Playwright session and pulling cookies to apply to Cypress."
   cy.getLoggedInSession();
