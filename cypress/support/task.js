@@ -1,7 +1,5 @@
 const playwright = require("playwright");
-
-const USERNAME = "Armanabbasi";
-const PASSWORD = "a@123456";
+import { PASSWORD, USERNAME } from "./constans";
 
 module.exports = {
   async getLoggedInSession() {
