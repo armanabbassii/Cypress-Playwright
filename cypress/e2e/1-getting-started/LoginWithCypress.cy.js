@@ -1,7 +1,8 @@
 /// <reference types="cypress" />
+const { BASE_URL } = require("../../support/constants");
 
-Cypress.Commands.add("getLoggedInSession", () => {
-  return cy.task("getLoggedInSession").then((cookies) => {
+Cypress.Commands.add("captureAndSetCookies", () => {
+  return cy.task("captureAndSetCookies").then((cookies) => {
     cy.log("Setting cookies from Playwright session", JSON.stringify(cookies));
 
     cookies.forEach((cookie) => {
@@ -9,14 +10,9 @@ Cypress.Commands.add("getLoggedInSession", () => {
       cy.setCookie(cookie.name, cookie.value, { log: false });
     });
   });
-  // cy.reload();
 });
-it("The test can be simplified with a Cypress.command", () => {
-  cy.visit("http://dev.cms.test/");
-  cy.get(".login-btn").contains("ورود با نام کاربری").click();
-
-  //   "Creating Playwright session and pulling cookies to apply to Cypress."
-  cy.getLoggedInSession();
+it("Login a user to the website via the SSO page", () => {
+  cy.captureAndSetCookies();
   cy.wait(2000);
-  cy.visit("http://dev.cms.test/");
+  cy.visit(BASE_URL);
 });

@@ -7,3 +7,8 @@ package-lock.json
 /tests-examples
 note
 constans.js
+fixtures
+downloads
+package.json
+cypress/support/constants.js
+
